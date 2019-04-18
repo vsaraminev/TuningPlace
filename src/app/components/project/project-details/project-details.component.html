@@ -1,0 +1,13 @@
+<div class="col-md-4">
+  <app-project-info 
+  *ngIf='project' 
+  [project]='project' 
+  [description]='project.description'></app-project-info>
+  <app-create-comment 
+  (projectCommentEmiter)='loadComments($event)' 
+  [projectId]='this.id'></app-create-comment>
+  <app-comment-info 
+  *ngFor='let commentInfo of comments$ | async' 
+  (deleteCommentEmiter)='loadComments($event)'
+  [commentInfo]='commentInfo'></app-comment-info>
+</div>

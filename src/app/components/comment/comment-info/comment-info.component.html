@@ -1,0 +1,24 @@
+<!-- <article class="post post-content">
+    <p>{{commentInfo['content']}}</p>
+    <div class="info">
+        <p>submitted by {{commentInfo['creatorName']}}</p>
+        <p>Created on: {{commentInfo['createdOn']}}</p>
+        <button *ngIf="isAuthor(commentInfo)" 
+        (click)="deleteComment(commentInfo['_id'])"
+         class="deleteLink">
+            delete
+        </button>
+    </div>
+</article> -->
+
+<div class="post">
+    <div className="card text-black bg-light">
+        <div className="card-body">
+            <blockquote className="card-blockquote text">
+                <p>{{commentInfo['content']}}</p>
+                <p>submitted by {{commentInfo['creatorName']}}</p>
+                <p>Created on: {{commentInfo['createdOn']}}</p>
+            </blockquote>
+        </div>
+    </div>
+</div>
