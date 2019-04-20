@@ -1,6 +1,6 @@
-import { PartService } from './../part.service';
+import { PartService } from '../../../core/services/part.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { Part } from 'src/app/shared/models/part';
+import { Part } from 'src/app/core/models/part';
 import { Router } from '@angular/router';
 
 @Component({

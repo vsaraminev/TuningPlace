@@ -1,4 +1,4 @@
-import { PartService } from './../part.service';
+import { PartService } from '../../../core/services/part.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';

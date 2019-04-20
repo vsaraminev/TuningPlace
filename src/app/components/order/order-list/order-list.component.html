@@ -1,0 +1,6 @@
+<h1>Listing yor orders!</h1>
+<div class="col-md-4" *ngFor='let o of userOrders$ | async'>
+  <p>{{o.part['title']}}</p>
+  <p>{{o.part['model']}}</p>
+  <p>{{o.part['description']}}</p>
+</div>

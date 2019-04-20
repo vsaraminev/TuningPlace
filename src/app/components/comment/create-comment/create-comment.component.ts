@@ -1,4 +1,4 @@
-import { CommentService } from './../comment.service';
+import { CommentService } from '../../../core/services/comment.service';
 import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';

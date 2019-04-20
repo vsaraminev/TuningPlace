@@ -1,5 +1,5 @@
-import { Comment } from '../../../shared/models/comment';
-import { CommentService } from './../comment.service';
+import { Comment } from '../../../core/models/comment';
+import { CommentService } from '../../../core/services/comment.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs'

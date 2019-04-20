@@ -1,6 +1,6 @@
-import { AuthService } from '../../../authentication/auth.service';
-import { ProjectService } from './../project.service';
-import { Project } from '../../../shared/models/project';
+import { AuthService } from '../../../core/services/auth.service';
+import { ProjectService } from '../../../core/services/project.service';
+import { Project } from '../../../core/models/project';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 

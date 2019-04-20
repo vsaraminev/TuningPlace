@@ -1,4 +1,4 @@
-import { ProjectService } from '../project.service';
+import { ProjectService } from '../../../core/services/project.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';

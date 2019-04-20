@@ -1,6 +1,6 @@
-import { ProjectService } from './../project.service';
+import { ProjectService } from '../../../core/services/project.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Project } from 'src/app/shared/models/project';
+import { Project } from 'src/app/core/models/project';
 import { Router } from '@angular/router';
 
 @Component({

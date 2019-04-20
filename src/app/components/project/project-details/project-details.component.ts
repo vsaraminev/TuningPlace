@@ -1,6 +1,6 @@
-import { CommentService } from './../../comment/comment.service';
-import { Project } from '../../../shared/models/project';
-import { ProjectService } from './../project.service';
+import { CommentService } from '../../../core/services/comment.service';
+import { Project } from '../../../core/models/project';
+import { ProjectService } from '../../../core/services/project.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';

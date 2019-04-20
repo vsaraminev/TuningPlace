@@ -1,7 +1,9 @@
-import { Part } from '../../../shared/models/part';
-import { PartService } from './../part.service';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { Part } from '../../../core/models/part';
+import { PartService } from '../../../core/services/part.service';
+import { OrderService } from '../../../core/services/order.service'
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-part-details',
@@ -14,21 +16,30 @@ export class PartDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private prartService: PartService
+    private partService: PartService,
+    private orderService: OrderService,
+    public authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
       let id = data['id'];
       this.partId = id;
-      console.log(this.partId);
-      this.prartService.getPart(id).subscribe((data) => {
+      this.partService.getPart(id).subscribe((data) => {
         this.part = data;
       });
     })
   }
 
-  deletePart(id: string) {
+  buyPart(partId: string) {
+    this.orderService.userBuyPart(partId)
+      .subscribe(() => {
+        this.router.navigate(['/part/all']);
+      })
+  }
 
+  deletePart(id: string) {
+    console.log('delete')
   }
 }

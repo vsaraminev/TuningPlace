@@ -1,0 +1,45 @@
+<header>
+  <mat-toolbar color='primary' fxLayoutGap='20px' row>
+    <span routerLink="/home"><mat-icon>home</mat-icon>Tuning Place</span>
+    <span class='spacer'></span>
+    <a routerLink="/contact">Link 1</a>
+    <a routerLink="/home">Link 2</a>
+    <a routerLink="/home">Link 3</a>
+    <ul fxFlex fxLayout='row' class="navbar-nav mr-auto">
+      <li *ngIf="authService.isAuthenticated()" appNavDropdown class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Shop</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" routerLink="/part/all">All Parts</a>
+          <a *ngIf="authService.isAdmin()" class="dropdown-item" routerLink="/part/create">Create Part</a>
+        </div>
+      </li>
+      <li *ngIf="authService.isAuthenticated()" appNavDropdown class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Store</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" routerLink="/project/all">All Projects</a>
+          <a class="dropdown-item" routerLink="/project/user">My Projects</a>
+          <a class="dropdown-item" routerLink="/project/create">Create</a>
+        </div>
+      </li>
+    </ul>
+    <ul fxLayoutAlign='flex-end' fxFlex fxLayout='row' class="navbar-nav">
+      <li *ngIf="!authService.isAuthenticated()" class="nav-item">
+        <a class="nav-link" routerLink="/signin">Login</a>
+      </li>
+      <li *ngIf="!authService.isAuthenticated()" class="nav-item">
+        <a class="nav-link" routerLink="/signup">Register</a>
+      </li>
+      <li *ngIf="authService.isAuthenticated()" class="nav-item">
+        <a class="nav-link" routerLink="/order/all">My Orders</a>
+      </li>
+      <li *ngIf="authService.isAuthenticated()" class="nav-item">
+        <a class="nav-link">Welcome, {{username}}</a>
+      </li>
+      <li *ngIf="authService.isAuthenticated()" class="nav-item">
+        <a class="nav-link" (click)="logout()"> Logout</a>
+      </li>
+    </ul>
+  </mat-toolbar>
+</header>

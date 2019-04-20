@@ -1,9 +1,25 @@
-<div>
-  <h1>Details for {{part.title}}</h1>
-  <div class="col-md-4">
-    <app-part-info *ngIf='part' [part]='part'></app-part-info>
+<div class='container' *ngIf='part'>
+    <h1>Details for {{part.title}}</h1>
+    <br>
+    <div class='row'>
+      <div class='col-lg-4'>
+        <img class='example-img' mat-card-image src="{{part.image}}" alt="img">
+      </div>
+      <div class='col-lg-4'>
+        <h4>Description</h4>
+        <hr />
+        <p><b>Title:</b>{{part.title}}</p>
+        <p><b>Model:</b> {{part.model}}</p>
+        <p><b>Year:</b> {{part.year}}</p>
+        <p><b>Description:</b> {{part.description}}</p>
+        <p><b>Price:</b> ${{part.price}}</p>
+        <hr />
+      </div>
+      <div class='col-lg-4' fxLayoutGap='10px'>
+        <button  mat-raised-button color="primary" (click)='buyPart(partId)'>Buy Item</button>
+        <button *ngIf="authService.isAdmin()" mat-raised-button color="accent" [routerLink]="['/part/edit', partId]">Edit Item</button>
+        <button *ngIf="authService.isAdmin()" mat-raised-button color="warn" (click)='deletePart(partId)'>Delete Item</button>
+      </div>
+    </div>
+    <br>
   </div>
-  <div class="col-md-4">
-    <h3>Component description</h3>
-  </div>
-</div>

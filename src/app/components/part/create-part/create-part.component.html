@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row space-top">
     <div class="col-md-12">
       <h1>Create New Part</h1>
@@ -73,5 +73,62 @@
         <button type="submit" class="btn btn-primary" [disabled]='invalid'>Create</button>
       </div>
     </div>
+  </form>
+</div> -->
+
+<div>
+  <div fxLayoutAlign="center center">
+    <div class="col-md-12">
+      <h1>Create New Part</h1>
+      <p>Please fill all fields.</p>
+    </div>
+  </div>
+  <form fxLayout='column' fxLayoutAlign="center center" [formGroup]='form' (submit)='createPart()'>
+    <div fxLayoutAlign="center center" class="row space-top">
+      <div fxLayoutAlign="center center" class="col-md-10" fxLayout='column'>
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <mat-icon matSuffix>reorder</mat-icon>
+          <input matInput formControlName='title' type="text" placeholder="Plese enter title...">
+        </mat-form-field>
+        <!-- <mat-error *ngIf="form.get('title').hasError('required')">Title field is requred!</mat-error> -->
+        <mat-error *ngIf="form.get('title').hasError('minlength')">Length must be at least 4 characters!</mat-error>
+
+        <mat-form-field>
+          <mat-icon matSuffix>drive_eta</mat-icon>
+          <input matInput formControlName='model' type="text" placeholder="Enter model...">
+        </mat-form-field>
+        <!-- <mat-error *ngIf="form.get('model').hasError('required')">Title field is requred!</mat-error> -->
+        <mat-error *ngIf="form.get('model').hasError('minlength')">Length must be at least 4 characters!</mat-error>
+
+        <mat-form-field>
+          <mat-icon matSuffix>date_range</mat-icon>
+          <input matInput formControlName='year' type="number" placeholder="Enter year...">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-icon matSuffix>description</mat-icon>
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName='description' placeholder="Please enter description.." rows="5">
+            </textarea>
+        </mat-form-field>
+        <!-- <mat-error *ngIf="form.get('description').hasError('required')"></mat-error> -->
+        <mat-error *ngIf="form.get('description').hasError('minlength')">Length must be at least 10 characters!</mat-error>
+
+        <mat-form-field>
+          <mat-icon matSuffix>attach_money</mat-icon>
+          <input matInput formControlName='price' type="number" placeholder="Enter price...">
+        </mat-form-field>
+        <mat-error *ngIf="form.get('price').hasError('required')"></mat-error>
+
+        <mat-form-field>
+          <mat-icon matSuffix>image</mat-icon>
+          <input matInput formControlName='image' type="text" placeholder="Enter image URL...">
+        </mat-form-field>
+        <mat-error *ngIf="form.get('image').hasError('required')"></mat-error>
+      </div>
+    </div>
+    <button mat-raised-button color='primary' type="submit" class="btn btn-primary" [disabled]='invalid'>Create</button>
+    <br>
   </form>
 </div>

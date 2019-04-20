@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../authentication/auth.service';
+import { AuthService } from '../core/services/auth.service';
+import { longStackSupport } from 'q';
 
 @Component({
   selector: 'app-navigation',
@@ -10,8 +11,15 @@ import { AuthService } from '../authentication/auth.service';
 export class NavigationComponent implements OnInit {
 
   constructor(
-  ) {  }
+    public authService: AuthService) {
+  }
 
   ngOnInit() {
   }
+  
+  logout(){
+
+  }
 }
+
+
