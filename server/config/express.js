@@ -8,6 +8,7 @@ const furnitureRoutes = require('../routes/furniture')
 const projectRoutes = require('../routes/project')
 const partRoutes = require('../routes/part')
 const commentRoutes = require('../routes/comment')
+const orderRoutes = require('../routes/order')
 const statsRoutes = require('../routes/stats')
 
 module.exports = app => {
@@ -26,6 +27,7 @@ module.exports = app => {
   // routes
   app.use('/auth', authRoutes)
   app.use('/furniture', furnitureRoutes)
+  app.use('/order', orderRoutes)
   app.use('/project', projectRoutes)
   app.use('/part', partRoutes)
   app.use('/comment', commentRoutes)

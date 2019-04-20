@@ -1,10 +1,11 @@
 const express = require('express')
 const authCheck = require('../middleware/auth-check');
 const Part = require('../models/Part');
+const User = require('../models/User');
 
 const router = new express.Router()
 
-function validatePartForm (payload) {
+function validatePartForm(payload) {
   const errors = {}
   let isFormValid = true
   let message = ''
@@ -74,7 +75,47 @@ router.post('/create', authCheck, (req, res) => {
     })
 })
 
-router.get('/all', authCheck ,(req, res) => {
+// router.post('/buy/:id', authCheck, (req, res) => {
+//   const partId = req.params.id;
+
+//   if (req.user.roles.indexOf('User') > -1) {
+//     var user = req.user;
+//     if (!user) {
+//       return res.status(200).json({
+//         success: false,
+//         message: "There is no user with these credentials"
+//       })
+//     }
+
+//     const partToBuy = Part.findById(partId)
+//       .then(async (boughtPart) => {
+//         res.status(200).json({
+//           success: true,
+//           message: 'You bought this part successfully.'
+//         })
+//         await user.parts.push(partId);
+//         await user.save();
+//       })
+//       .catch((err) => {
+//         console.log(err)
+//         let message = 'Something went wrong :( Check the form for errors.'
+//         if (err.code === 11000) {
+//           message = 'Post with the given name already exists.'
+//         }
+//         return res.status(200).json({
+//           success: false,
+//           message: message
+//         })
+//       })
+//   } else {
+//     return res.status(200).json({
+//       success: false,
+//       message: 'Invalid credentials!'
+//     })
+//   }
+// })
+
+router.get('/all', authCheck, (req, res) => {
   const page = parseInt(req.query.page) || 1
   const search = req.query.search
 
@@ -132,10 +173,10 @@ router.delete('/delete/:id', authCheck, (req, res) => {
       }
 
       if (!req.user.roles.includes("Admin")) {
-         return res.status(401).json({
-           success: false,
-           message: 'Unauthorized!'
-         })
+        return res.status(401).json({
+          success: false,
+          message: 'Unauthorized!'
+        })
       }
 
       Part.findByIdAndDelete(id)
@@ -181,7 +222,7 @@ router.put('/edit/:id', authCheck, (req, res) => {
         success: true,
         message: 'Part edited successfully!'
       })
-  })
+    })
 })
 
 router.get('/:id', authCheck, (req, res) => {
