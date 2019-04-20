@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatIconModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectAllComponent } from './project-all/project-all.component';
@@ -15,6 +16,7 @@ import { ProjectUserComponent } from './project-user/project-user.component';
 import { CommentInfoComponent } from '../comment/comment-info/comment-info.component';
 import { CreateCommentComponent } from '../comment/create-comment/create-comment.component';
 import { ProjectRoutingModule } from './project-routing.module';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
     declarations: [
@@ -30,11 +32,13 @@ import { ProjectRoutingModule } from './project-routing.module';
         CommonModule,
         FormsModule,
         ProjectRoutingModule,
+        MaterialModule,
         MatInputModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonModule,
         FlexLayoutModule,
         ReactiveFormsModule,
-        MatIconModule,
-        MatCardModule
     ]
 })
 

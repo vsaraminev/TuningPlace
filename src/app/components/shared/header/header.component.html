@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <mat-toolbar color='primary' fxLayoutGap='20px' row>
     <span routerLink="/home"><mat-icon>home</mat-icon>Tuning Place</span>
     <span class='spacer'></span>
@@ -42,4 +42,44 @@
       </li>
     </ul>
   </mat-toolbar>
-</header>
+</header> -->
+
+<mat-toolbar color="primary">
+  <div routerLink="/">
+    Tuning Place
+  </div>
+  <div >
+    <ul class="leftTool" fxFlex fxLayout="row" fxLayoutGap="20px">
+      <li *ngIf="authService.isAuthenticated()">
+        <a routerLink="/part/all">All Parts</a>
+      </li>
+      <li *ngIf="authService.isAdmin()">
+        <a routerLink="/part/create">Create Part</a>
+      </li>
+    </ul>
+    <button *ngIf="authService.isAuthenticated()" mat-button [matMenuTriggerFor]="menu">Projects</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/project/all">All Projects</button>
+      <button mat-menu-item routerLink="/project/user">My Projects</button>
+      <button mat-menu-item routerLink="/project/create">Create Project</button>
+    </mat-menu>
+  </div>
+
+  <ul fxFlex fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="flex-end">
+    <li *ngIf="authService.isAuthenticated()">
+      <a routerLink="/order/all">My orders</a>
+    </li>
+    <li *ngIf="authService.isAuthenticated()">
+      <a>Welcome, {{username}}</a>
+    </li>
+    <li *ngIf="!authService.isAuthenticated()">
+      <a routerLink="/signin">Login</a>
+    </li>
+    <li *ngIf="!authService.isAuthenticated()">
+      <a routerLink="/signup">Register</a>
+    </li>
+    <li *ngIf="authService.isAuthenticated()">
+      <a routerLink="#" (click)="logout()">Logout</a>
+    </li>
+  </ul>
+</mat-toolbar>

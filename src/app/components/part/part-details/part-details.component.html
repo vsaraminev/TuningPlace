@@ -1,25 +1,36 @@
-<div class='container' *ngIf='part'>
-    <h1>Details for {{part.title}}</h1>
-    <br>
-    <div class='row'>
-      <div class='col-lg-4'>
-        <img class='example-img' mat-card-image src="{{part.image}}" alt="img">
-      </div>
-      <div class='col-lg-4'>
-        <h4>Description</h4>
-        <hr />
-        <p><b>Title:</b>{{part.title}}</p>
-        <p><b>Model:</b> {{part.model}}</p>
-        <p><b>Year:</b> {{part.year}}</p>
-        <p><b>Description:</b> {{part.description}}</p>
-        <p><b>Price:</b> ${{part.price}}</p>
-        <hr />
-      </div>
-      <div class='col-lg-4' fxLayoutGap='10px'>
-        <button  mat-raised-button color="primary" (click)='buyPart(partId)'>Buy Item</button>
-        <button *ngIf="authService.isAdmin()" mat-raised-button color="accent" [routerLink]="['/part/edit', partId]">Edit Item</button>
-        <button *ngIf="authService.isAdmin()" mat-raised-button color="warn" (click)='deletePart(partId)'>Delete Item</button>
-      </div>
-    </div>
-    <br>
+<div fxLayout="column" fxLayoutGap="30px">
+      <div fxFlex fxLayout="row" fxLayoutGap="180px">
+          <div class="left-side">
+              <h1>{{part.title}} </h1>
+              <div id="image-container">
+                  <img src="{{part.image}}">
+              </div>
+          </div>
+          <div fxLayout="column" fxLayouGap="30px">
+              <h1 class="center-text">Description</h1>
+              <ul>
+                  <li>
+                      <b>Title:</b>{{part.title}}
+                  </li>
+                  <li>
+                      <b>Model:</b> {{part.model}}
+                  </li>
+                  <li>
+                      <b>Year:</b> {{part.year}}
+                  </li>
+                  <li>
+                      <b>Description:</b> {{part.description}}
+                  </li>
+                  <li>
+                      <b>Price:</b> ${{part.price}}
+                  </li>
+              </ul>
+              <div fxFlex fxLayout="row">
+                  <button  mat-raised-button color="primary" (click)='buyPart(partId)'>Buy Item</button>
+                  <button *ngIf="authService.isAdmin()" mat-raised-button color="accent" [routerLink]="['/part/edit', partId]">Edit Item</button>
+                  <button *ngIf="authService.isAdmin()" mat-raised-button color="warn" (click)='deletePart(partId)'>Delete Item</button>
+              </div>
+          </div>          
+        </div>
+        <br>
   </div>

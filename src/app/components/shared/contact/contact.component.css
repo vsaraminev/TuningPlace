@@ -1,4 +1,15 @@
 agm-map {
-    height: 500px;
-    width: 400px;
+    height: 400px;
+    width: 350px;
   }
+
+  img {
+    margin: 0;
+    width: 1200px;
+    height: 390px;
+}
+
+mat-icon {
+  vertical-align: text-bottom ;
+  font-size: 2em;
+}

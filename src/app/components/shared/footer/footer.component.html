@@ -1,5 +1,14 @@
 <footer>
   <mat-toolbar color='primary' fxLayoutAlign="center center" row>
-    <p class="center">This is my footer. {{ date | date: 'yyyy'}}</p>
+    <ul fxFlex fxLayout="row" fxLayoutGap="20px">
+      <li>
+          This is my footer {{ date | date: 'yyyy'}}
+      </li>
+    </ul>
+    <ul fxFlex fxLayout="row" fxLayoutAlign="flex-end">        
+        <li>
+          <a routerLink="/contact">About Us</a>
+        </li>
+      </ul>
   </mat-toolbar>
 </footer>

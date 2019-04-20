@@ -1,3 +1,52 @@
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
+<div class='container'>
+  <br>
+  <div class='row'>
+    <div class='col-lg-4'>
+      <h3>About Us</h3>
+      <br>
+      <p>Give your car the look it deserves and the performance it needs! We are your supplier for any engine upgrades,
+        stylish modifications or a complete overhaul.
+        Our products will suit all of your needs within your budget and are compatible for all road, race, rally and
+        drift applications.
+      </p>
+      <p>Improve your car’s performance with our high quality tuning parts and match its looks with our wide range of
+        styling parts.</p>
+      <p>You will find parts for all makes and models in our shop. We are specialized in car parts for Japanese cars,
+        especially Honda. But we also carry a wide range of products for the European car brands.</p>
+    </div>
+    <div class='col-lg-4'>
+      <h3>Customer Service</h3>
+      <br>
+      <div>
+        <h6>
+          <mat-icon>phone</mat-icon> Service-Hotline
+        </h6>
+        <h4>+359 (02)2373 89-1700</h4>
+        <p>Monday - Thursday 7.30 - 17.00</p>
+        <p>Friday 7.30 - 15.00</p>
+        <p>(Bulgaria, Sofia, CET)</p>
+      </div>
+      <br>
+      <div>
+        <h6>
+          <mat-icon>local_printshop</mat-icon> Fax number
+        </h6>
+        <h4>+359 (02)2373 89-1238</h4>
+      </div>
+      <br>
+      <div>
+        <h6>
+          <mat-icon>email</mat-icon> E-Mail
+        </h6>
+        <h4>parts@parts.bg</h4>
+      </div>
+    </div>
+    <div class='col-lg-4'>
+      <h3>Location</h3>
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+  <br>
+</div>

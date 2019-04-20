@@ -7,6 +7,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
 import { MatToolbarModule, MatIconModule } from '@angular/material';
+import { MaterialModule } from 'src/app/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
     declarations: [
@@ -21,6 +24,9 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
         AgmCoreModule,
         MatToolbarModule,
         MatIconModule,
+        MaterialModule,
+        MatMenuModule,
+        FlexLayoutModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB0ves4aaQ7Ihq_TIX-2Uwca7Hr5wGjm0w'
         })

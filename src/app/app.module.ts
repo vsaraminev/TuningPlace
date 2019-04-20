@@ -17,7 +17,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderListComponent } from './components/order/order-list/order-list.component';
 import { SharedModule } from './components/shared/shared.module';
-import { PartModule } from './components/part/part.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,6 @@ import { PartModule } from './components/part/part.module';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    PartModule,
     AuthenticationModule,
     ToastrModule.forRoot()  
   ],
