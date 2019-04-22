@@ -5,7 +5,8 @@ import {
     MatIconModule, 
     MatListModule, 
     MatFormFieldModule, 
-    MatInputModule
+    MatInputModule,
+    MatTableModule
 } from '@angular/material';
 
 import {MatMenuModule} from '@angular/material/menu';
@@ -30,7 +31,8 @@ import {MatCardModule} from '@angular/material/card';
         MatFormFieldModule,
         MatInputModule,
         MatCardModule,
-        MatMenuModule
+        MatMenuModule,
+        MatTableModule
     ]
 })
 

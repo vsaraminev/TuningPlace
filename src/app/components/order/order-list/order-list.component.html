@@ -1,6 +1,48 @@
-<h1>Listing yor orders!</h1>
+<!-- 
 <div class="col-md-4" *ngFor='let o of userOrders$ | async'>
   <p>{{o.part['title']}}</p>
   <p>{{o.part['model']}}</p>
   <p>{{o.part['description']}}</p>
-</div>
+</div> -->
+<h3>History of my orders!</h3>
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>
+      Title
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{element.part.title}}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="model">
+    <mat-header-cell *matHeaderCellDef>
+      Model
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{element.part.model}}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="year">
+    <mat-header-cell *matHeaderCellDef>
+      Year
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{element.part.year}}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef>
+      Price
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{element.part.price}}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<br>

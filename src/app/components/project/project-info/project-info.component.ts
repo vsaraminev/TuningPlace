@@ -32,7 +32,7 @@ export class ProjectInfoComponent implements OnInit {
   deleteProject(id: string) {
     this.projectService.deleteProject(id)
       .subscribe(() => {
-        this.router.navigate(['/projects/all']);
+        this.router.navigate(['/project/all']);
         this.deleteProjectEmiter.emit();
       });
   }

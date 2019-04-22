@@ -1,3 +1,61 @@
-.loadImage {
-  border-image-width: 100%
+img {
+  width: 100%;
 }
+div.col-md-4 {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+div.col-md-6 > p {
+  font-size: 20px;
+  text-align: left;
+}
+
+img {
+  width: 550px;
+  height: 390px;
+}
+
+#image-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding-bottom: 25px;
+}
+
+.left-side {
+  margin-left: 50px;
+}
+
+.right-side {
+  margin-right: 10px;
+}
+
+span {
+  font-size: 30px;
+  text-align: left !important;
+  margin-top: 40px;
+}
+
+p {
+  font-size: 20px;
+  width: 1000px;
+  white-space: pre-line;
+}
+
+.center-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* button {
+  margin-top: 30px;
+  margin-left: 30px;  
+  width: 130px;
+  height: 50px;
+} */

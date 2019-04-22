@@ -6,8 +6,8 @@
     </div>
   </div>
   <div class="row space-top">
-    <div class="col-md-4" *ngFor='let p of projects$ | async'>
-      <app-project-info [project]='p'></app-project-info>
+    <div class="col-md-4" *ngFor='let project of projects$ | async'>
+      <app-project-info [project]='project'></app-project-info>
     </div>
   </div>
 </div>

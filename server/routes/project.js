@@ -71,8 +71,6 @@ router.post('/create', authCheck, (req, res) => {
 })
 
 router.get('/all', authCheck ,(req, res) => {
-  const page = parseInt(req.query.page) || 1
-  const search = req.query.search
 
   Project.find({})
     .then((project) => {

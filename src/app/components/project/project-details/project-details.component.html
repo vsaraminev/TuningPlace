@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<!-- <div class="col-md-4">
   <app-project-info 
   *ngIf='project' 
   [project]='project' 
@@ -10,4 +10,36 @@
   *ngFor='let commentInfo of comments$ | async' 
   (deleteCommentEmiter)='loadComments($event)'
   [commentInfo]='commentInfo'></app-comment-info>
-</div>
+</div> -->
+
+  <div fxLayout="column" fxLayoutGap="30px" *ngIf="project">
+    <div fxFlex fxLayout="row">
+      <div class="left-side">
+        <h1>{{project.title}} </h1>
+        <div id="image-container">
+          <img src="{{project.image}}">
+        </div>
+      </div>
+      <div fxLayout="column" fxLayouGap="20px">
+        <h1 class="center-text">Description</h1>
+        <ul>
+          <li>
+            <b>Title:</b>{{project.title}}
+          </li>
+          <li>
+            <b>Model:</b> {{project.model}}
+          </li>
+          <li>
+            <b>Year:</b> {{project.year}}
+          </li>
+          <li>
+            <b>Description:</b> {{project.description}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <br>
+  </div>
+  <app-create-comment (projectCommentEmiter)='loadComments($event)' [projectId]='this.id'></app-create-comment>
+  <app-comment-info *ngFor='let commentInfo of comments$ | async' (deleteCommentEmiter)='loadComments($event)'
+    [commentInfo]='commentInfo'></app-comment-info>

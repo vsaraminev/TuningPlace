@@ -1,14 +1,12 @@
 <footer>
   <mat-toolbar color='primary' fxLayoutAlign="center center" row>
-    <ul fxFlex fxLayout="row" fxLayoutGap="20px">
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="https://github.com/vsaraminev/TuningPlace"> Ventsislav Saraminev</a>
+    </div>
+    <ul fxFlex fxLayout="row" fxLayoutAlign="flex-end">
       <li>
-          This is my footer {{ date | date: 'yyyy'}}
+        <a routerLink="/contact">About Us</a>
       </li>
     </ul>
-    <ul fxFlex fxLayout="row" fxLayoutAlign="flex-end">        
-        <li>
-          <a routerLink="/contact">About Us</a>
-        </li>
-      </ul>
   </mat-toolbar>
 </footer>

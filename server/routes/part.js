@@ -116,9 +116,6 @@ router.post('/create', authCheck, (req, res) => {
 // })
 
 router.get('/all', authCheck, (req, res) => {
-  const page = parseInt(req.query.page) || 1
-  const search = req.query.search
-
   Part.find({})
     .then((part) => {
       return res.status(200).json(part)
@@ -162,7 +159,8 @@ router.get('/details/:id', authCheck, (req, res) => {
 
 router.delete('/delete/:id', authCheck, (req, res) => {
   const id = req.params.id
-
+console.log('result')
+console.log(id)
   Part.findById(id)
     .then((part) => {
       if (!part) {

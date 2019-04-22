@@ -7,6 +7,7 @@ const createPart = 'http://localhost:5000/part/create';
 const getAllParts = 'http://localhost:5000/part/all';
 const getSinglePart = 'http://localhost:5000/part/details/';
 const editPart = 'http://localhost:5000/part/edit/';
+const deletePart = 'http://localhost:5000/part/delete/';
 const buyPart = 'http://localhost:5000/part/buy/';
 
 @Injectable({
@@ -29,6 +30,10 @@ export class PartService {
 
   editPart(id: string, data: Part) {
     return this.http.put(editPart + id, data);
+  }
+
+  deletePart(id: string) {
+    return this.http.delete(deletePart + id);
   }
 
   buyPart(id: string) {

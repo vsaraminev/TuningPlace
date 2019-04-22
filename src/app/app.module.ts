@@ -1,3 +1,4 @@
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { AuthenticationModule } from './components/authentication/authentication.module';
 import { MaterialModule } from './material.module';
 import { JwtInterceptorService } from './core/interceptors/jwt-interceptor.service';
@@ -17,6 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderListComponent } from './components/order/order-list/order-list.component';
 import { SharedModule } from './components/shared/shared.module';
+import { ResponseHandlerService } from './core/interceptors/response-handler.service';
+import { SuccessInterceptor } from './core/interceptors/success.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,12 +41,18 @@ import { SharedModule } from './components/shared/shared.module';
     HttpClientModule,
     SharedModule,
     AuthenticationModule,
-    ToastrModule.forRoot()  
+    ToastrModule.forRoot()
   ],
   providers: [
     AuthService,
     {
       provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: SuccessInterceptor, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
     }
   ],
   bootstrap: [AppComponent]

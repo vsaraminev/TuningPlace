@@ -40,8 +40,8 @@ router.get('/user', authCheck, async (req, res) => {
 
     await Order.find({ buyer: user })
         .populate('part')
-        .then((parts) => {
-            return res.status(200).json(parts)
+        .then((data) => {
+            return res.status(200).json(data)
         })
 })
 

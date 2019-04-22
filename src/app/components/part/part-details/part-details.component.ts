@@ -40,6 +40,9 @@ export class PartDetailsComponent implements OnInit {
   }
 
   deletePart(id: string) {
-    console.log('delete')
+    this.partService.deletePart(id)
+      .subscribe(() => {
+        this.router.navigate(['/part/all']);
+      });
   }
 }

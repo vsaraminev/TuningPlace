@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { OrderService } from 'src/app/core/services/order.service';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-order-list',
@@ -9,13 +10,17 @@ import { OrderService } from 'src/app/core/services/order.service';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  userOrders$: Observable<Order[]>
+  displayedColumns: string[] = ['title', 'model', 'year', 'price'];
+  dataSource = new MatTableDataSource<Order>();
+
   constructor(
     private orderService: OrderService
   ) { }
 
   ngOnInit() {
-    this.userOrders$ = this.orderService.getOrders();
-    console.log(this.orderService.getOrders());
+    this.orderService.getOrders()
+      .subscribe((data) => {
+        this.dataSource.data = data;
+      })
   }
 }
