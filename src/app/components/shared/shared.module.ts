@@ -30,7 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatMenuModule,
         FlexLayoutModule,        
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyB0ves4aaQ7Ihq_TIX-2Uwca7Hr5wGjm0w'
+            apiKey: ''
         })
     ],
     exports: [
