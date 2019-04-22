@@ -18,7 +18,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderListComponent } from './components/order/order-list/order-list.component';
 import { SharedModule } from './components/shared/shared.module';
-import { ResponseHandlerService } from './core/interceptors/response-handler.service';
 import { SuccessInterceptor } from './core/interceptors/success.interceptor';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { SuccessInterceptor } from './core/interceptors/success.interceptor';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,

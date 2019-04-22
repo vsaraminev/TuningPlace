@@ -1,5 +1,5 @@
 <form #f="ngForm" (ngSubmit)="projectComment()" id="commentForm">
-  <label>Comment</label>
+  <h6>Leave Comment</h6>
   <textarea required ngModel name="content" type="text"></textarea>
   <input type="submit" [disabled]="f.invalid" value="Add Comment" id="btnPostComment">
-</form>
+</form>     

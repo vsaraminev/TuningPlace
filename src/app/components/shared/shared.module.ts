@@ -10,6 +10,7 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
 import { MaterialModule } from 'src/app/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatMenuModule} from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -21,12 +22,13 @@ import {MatMenuModule} from '@angular/material/menu';
     imports: [
         CommonModule,
         RouterModule,
+        BrowserAnimationsModule,
         AgmCoreModule,
         MatToolbarModule,
         MatIconModule,
         MaterialModule,
         MatMenuModule,
-        FlexLayoutModule,
+        FlexLayoutModule,        
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB0ves4aaQ7Ihq_TIX-2Uwca7Hr5wGjm0w'
         })

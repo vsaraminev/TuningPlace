@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
@@ -12,7 +12,6 @@ describe('ContactComponent', () => {
     })
     .compileComponents();
   }));
-
   beforeEach(() => {
     fixture = TestBed.createComponent(ContactComponent);
     component = fixture.componentInstance;
