@@ -12,37 +12,37 @@
   [commentInfo]='commentInfo'></app-comment-info>
 </div> -->
 
-  <div fxLayout="column" fxLayoutGap="30px" *ngIf="project">
-    <div fxFlex fxLayout="row">
-      <div class="left-side">
-        <h1>{{project.title}} </h1>
-        <div id="image-container">
-          <img src="{{project.image}}">
-        </div>
+<div fxLayout="column" fxLayoutGap="30px" *ngIf="project">
+  <div fxFlex fxLayout="row">
+    <div class="left-side">
+      <h1>{{project.title}} </h1>
+      <div id="image-container">
+        <img src="{{project.image}}">
       </div>
-      <div class="right-side" fxLayout="column" fxLayouGap="20px">
-        <h1 class="center-text">Description</h1>
-        <ul>
-          <li>
-            <h6>Title:</h6>{{project.title}}
-          </li>
-          <li>
-            <h6>Model:</h6> {{project.model}}
-          </li>
-          <li>
-            <h6>Year:</h6> {{project.year}}
-          </li>
-          <li>
-            <h6>Description:</h6> {{project.description}}
-          </li>
-          <li>
-            <h6>Creator:</h6>{{project.creator['name']}}
-          </li>
-        </ul>
-      </div>
+      <app-create-comment (projectCommentEmiter)='loadComments($event)' [projectId]='this.id'></app-create-comment>
+      <app-comment-info *ngFor='let commentInfo of comments$ | async' (deleteCommentEmiter)='loadComments($event)'
+        [commentInfo]='commentInfo'></app-comment-info>
     </div>
-    <br>
+    <div class="right-side" fxLayout="column" fxLayouGap="20px">
+      <h1 class="center-text">Description</h1>
+      <ul>
+        <li>
+          <h6>Title:</h6>{{project.title}}
+        </li>
+        <li>
+          <h6>Model:</h6> {{project.model}}
+        </li>
+        <li>
+          <h6>Year:</h6> {{project.year}}
+        </li>
+        <li>
+          <h6>Description:</h6> {{project.description}}
+        </li>
+        <li>
+          <h6>Creator:</h6>{{project.creator['name']}}
+        </li>
+      </ul>
+    </div>
   </div>
-  <app-create-comment (projectCommentEmiter)='loadComments($event)' [projectId]='this.id'></app-create-comment>
-  <app-comment-info *ngFor='let commentInfo of comments$ | async' (deleteCommentEmiter)='loadComments($event)'
-    [commentInfo]='commentInfo'></app-comment-info>
+  <br>
+</div>

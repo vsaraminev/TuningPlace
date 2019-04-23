@@ -17,7 +17,7 @@
             <blockquote className="card-blockquote text">
                 <p>{{commentInfo['content']}}</p>
                 <p>submitted by {{commentInfo['creatorName']}}</p>
-                <p>Created on: {{commentInfo['createdOn']}}</p>
+                <p>Created on: {{commentInfo['createdOn'] | date: "dd-MMM-yy HH:mm:ss "}}</p>
             </blockquote>
         </div>
     </div>
