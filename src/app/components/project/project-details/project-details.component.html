@@ -20,20 +20,23 @@
           <img src="{{project.image}}">
         </div>
       </div>
-      <div fxLayout="column" fxLayouGap="20px">
+      <div class="right-side" fxLayout="column" fxLayouGap="20px">
         <h1 class="center-text">Description</h1>
         <ul>
           <li>
-            <b>Title:</b>{{project.title}}
+            <h6>Title:</h6>{{project.title}}
           </li>
           <li>
-            <b>Model:</b> {{project.model}}
+            <h6>Model:</h6> {{project.model}}
           </li>
           <li>
-            <b>Year:</b> {{project.year}}
+            <h6>Year:</h6> {{project.year}}
           </li>
           <li>
-            <b>Description:</b> {{project.description}}
+            <h6>Description:</h6> {{project.description}}
+          </li>
+          <li>
+            <h6>Creator:</h6>{{project.creator['name']}}
           </li>
         </ul>
       </div>

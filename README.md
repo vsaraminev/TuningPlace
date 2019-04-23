@@ -1,27 +1,26 @@
-# InterceptorsExercise
+Angular Fundamentals Project - Tuning Place
+Tuning Place is a projects sharing system built with Angular and Node.js and MongoDB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+1. Public Part:
+Guests are not allowed into the system. The application start page enables user to create a new account or log in if he already has one.
 
-## Development server
+2. User Roles:
+There are 2 user roles: User (which is the default role for every user) and Admin.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. What can user do?
+After a successful login every user can:
 
-## Code scaffolding
+- Create tuning project to the system.
+- View all tuning projects in the system.
+- View details about all shared tuning projects.
+- View own projects in the system.
+- Add comments in project details page.
+- View all available parts in store.
+- View details about all available parts.
+- Buy parts available in the store.
+- View all bought parts.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+4. What can Admin do?
+- Admin can create parts in the store.
+- Admin can Edit and Delete all of the parts.
+- Admin also has users functionality.

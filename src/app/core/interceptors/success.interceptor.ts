@@ -29,7 +29,8 @@ export class SuccessInterceptor implements HttpInterceptor {
                             if (event.url.endsWith('login')
                                 || event.url.endsWith('register')
                                 || event.url.endsWith('create')
-                                || event.url.includes('delete')) {
+                                || event.url.includes('delete')
+                                || event.url.includes('edit')) {
                                 this.toastr.success(event.body.message);
                             }
                         }

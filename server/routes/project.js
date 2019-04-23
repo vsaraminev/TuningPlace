@@ -81,6 +81,7 @@ router.get('/all', authCheck ,(req, res) => {
 router.get('/details/:id', authCheck, (req, res) => {
   const id = req.params.id
   Project.findById(id)
+  .populate('creator')
     .then((project) => {
       if (!project) {
         return res.status(404).json({

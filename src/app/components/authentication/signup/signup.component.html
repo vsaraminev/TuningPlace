@@ -48,7 +48,7 @@
 <div class="container">
   <h1>Sign Up</h1>
   <form (ngSubmit)="signUp()" [formGroup]='registerForm' fxLayout='column' fxLayoutAlign="center center">
-    
+
     <mat-form-field>
       <mat-icon matSuffix>account_circle</mat-icon>
       <input matInput formControlName='name' placeholder="Enter your name...">
@@ -56,23 +56,25 @@
     <!-- <mat-error *ngIf="loginForm.get('password').hasError('password')">Email address is required!</mat-error> -->
     <mat-error *ngIf="registerForm.get('name').hasError('minlength')">Name must be at least 4 characters long!
     </mat-error>
-    
+
     <mat-form-field>
-        <mat-icon matSuffix>email</mat-icon>
+      <mat-icon matSuffix>email</mat-icon>
       <input matInput formControlName='email' placeholder="Enter your email...">
     </mat-form-field>
     <!-- <mat-error *ngIf="loginForm.get('email').hasError('required')">Email address is required!</mat-error> -->
     <mat-error *ngIf="registerForm.get('email').hasError('email')">Email is invalid!</mat-error>
-    
+
     <mat-form-field>
-        <mat-icon matSuffix>vpn_key</mat-icon>
+      <mat-icon matSuffix>vpn_key</mat-icon>
       <input matInput formControlName='password' type='password' placeholder="Enter your password..">
     </mat-form-field>
     <!-- <mat-error *ngIf="loginForm.get('password').hasError('password')">Email address is required!</mat-error> -->
     <mat-error *ngIf="registerForm.get('password').hasError('minlength')">Password must be at least 4 characters long!
     </mat-error>
-    
     <button mat-raised-button color='primary' type='submit' [disabled]='registerForm.invalid'>Sign Up</button>
   </form>
   <br>
+</div>
+<div>
+  <br><br><br><br><br><br><br><br><br><br>
 </div>
