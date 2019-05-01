@@ -33,6 +33,7 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
 export class ContactComponent implements OnInit {
   lat: number = 42.698334;
   lng: number = 23.319941;
+  
   goals = [
     `Give your car the look it deserves and the performance it needs! We are your supplier for any engine upgrades,
   stylish modifications or a complete overhaul.

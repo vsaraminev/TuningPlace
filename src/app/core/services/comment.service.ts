@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 const createComment = 'http://localhost:5000/comment/create';
 const getProjectComments = 'http://localhost:5000/comment/allByProject/';
